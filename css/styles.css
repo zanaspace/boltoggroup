@@ -127,6 +127,19 @@ img {
     color: var(--clr-white);
 }
 
+.btn-outline {
+    background-color: transparent;
+    color: var(--clr-accent);
+    border: 2px solid var(--clr-accent);
+}
+
+.btn-outline:hover {
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 .btn-large {
     padding: 1rem 2rem;
     font-size: 1.125rem;
@@ -583,6 +596,92 @@ img {
     margin-bottom: 0;
 }
 
+/* ==========================================================================
+   UX Additions (Dropdown, Back-to-top, AOS)
+   ========================================================================== */
+.nav-dropdown {
+    position: relative;
+}
+.main-nav .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--clr-white);
+    box-shadow: var(--shadow-md);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    z-index: 1000;
+    padding: 0.5rem 0;
+    display: block;
+    flex-direction: column;
+}
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.dropdown-menu li {
+    display: block;
+    border-bottom: 1px solid #f1f5f9;
+}
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+.dropdown-menu a {
+    color: var(--clr-primary);
+    padding: 0.5rem 1rem !important;
+    font-size: 0.95rem;
+}
+.dropdown-menu a:hover {
+    background-color: #f8fafc;
+    color: var(--clr-accent);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--clr-accent);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.back-to-top:hover {
+    background-color: var(--clr-accent-hover);
+    transform: translateY(-3px);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* ==========================================================================
    Mobile Navigation Toggle
@@ -678,6 +777,21 @@ img {
         text-align: left;
         background-color: transparent;
         padding: 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding-left: 1rem;
+        margin-top: 0.5rem;
+        display: none;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+        display: block;
     }
     
     .main-nav a {

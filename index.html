@@ -28,7 +28,14 @@
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="pages/about.html">About Us</a></li>
                     <li><a href="pages/services.html">Services</a></li>
-                    <li><a href="pages/products.html">Products</a></li>
+                    <li class="nav-dropdown">
+    <a href="pages/products.html">Products &#9660;</a>
+    <ul class="dropdown-menu">
+        <li><a href="pages/products_drilling.html">Drilling Equipment</a></li>
+        <li><a href="pages/products_cementing.html">Cementing & Casing</a></li>
+        <li><a href="pages/products_octg.html">OCTG Solutions</a></li>
+    </ul>
+</li>
                     <li><a href="index.html#clients">Clients</a></li>
                     <li><a href="pages/contact.html">Contact</a></li>
                 </ul>
@@ -50,7 +57,10 @@
         <div class="container hero-content">
             <h2>Engineering Excellence. Driving Global Energy.</h2>
             <p>From complex subsea engineering to comprehensive onshore facility management, we deliver world-class EPC solutions tailored to your project's exact needs.</p>
-            <a href="pages/contact.html" class="btn btn-primary btn-large">Partner With Us Today</a>
+            <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+                <a href="pages/contact.html" class="btn btn-primary btn-large">Partner With Us Today</a>
+                <a href="pages/services.html" class="btn btn-outline btn-large">Explore Our Services</a>
+            </div>
         </div>
     </section>
 
@@ -65,11 +75,11 @@
                     <a href="pages/about.html" class="btn btn-primary" style="margin-top: 1.5rem;">Discover Our History</a>
                 </div>
                 <div class="about-stats">
-                    <div class="stat-box">
+                    <div class="stat-box fade-in">
                         <h4>1995</h4>
                         <span>Year Established</span>
                     </div>
-                    <div class="stat-box">
+                    <div class="stat-box fade-in">
                         <h4>EPC</h4>
                         <span>Core Specialization</span>
                     </div>
@@ -261,8 +271,34 @@
             }
         });
     </script>
+<button id="backToTop" class="back-to-top" aria-label="Back to Top">&#8593;</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to top
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) backToTop.classList.add('visible');
+                    else backToTop.classList.remove('visible');
+                });
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                });
+            }
+            // AOS Scroll
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
+
 
 
 
