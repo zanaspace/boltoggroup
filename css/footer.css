@@ -1,0 +1,186 @@
+/* ==========================================================================
+   Enterprise Footer Styles
+   ========================================================================== */
+.global-footer {
+    background-color: #0b1325; /* Deep corporate navy */
+    color: #a0aec0; /* Soft gray for text */
+    padding: 5rem 0 2rem;
+    font-family: 'Outfit', sans-serif;
+    border-top: 4px solid var(--clr-accent, #ef4444); /* Red top accent line */
+    position: relative;
+}
+
+.global-footer .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.global-footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 992px) {
+    .global-footer .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .global-footer .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.global-footer .footer-col h5 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+/* Subtle line under headers */
+.global-footer .footer-col h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--clr-accent, #ef4444);
+}
+
+.global-footer .footer-logo {
+    max-width: 190px;
+    height: auto;
+    display: block;
+    margin-bottom: 1.5rem;
+    filter: brightness(0) invert(1); /* Pure white logo on dark background */
+}
+
+.global-footer .footer-about {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.global-footer .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.global-footer .footer-links li {
+    margin-bottom: 0.85rem;
+}
+
+.global-footer .footer-links a {
+    color: #a0aec0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.global-footer .footer-links a::before {
+    content: '\203A'; /* › */
+    color: var(--clr-accent, #ef4444);
+    margin-right: 8px;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: margin 0.3s ease;
+}
+
+.global-footer .footer-links a:hover {
+    color: #ffffff;
+}
+
+.global-footer .footer-links a:hover::before {
+    margin-right: 12px;
+    margin-left: 4px;
+}
+
+.global-footer .footer-address {
+    font-style: normal;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.global-footer .footer-address strong {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.global-footer .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.global-footer .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.global-footer .social-icon:hover {
+    background-color: var(--clr-accent, #ef4444);
+    border-color: var(--clr-accent, #ef4444);
+    transform: translateY(-3px);
+}
+
+.global-footer .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .global-footer .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+
+.global-footer .footer-bottom p {
+    margin: 0;
+}
+
+.global-footer .staff-login-btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    color: var(--clr-accent, #ef4444);
+    border: 2px solid var(--clr-accent, #ef4444);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.global-footer .staff-login-btn:hover {
+    background-color: var(--clr-accent, #ef4444);
+    color: #ffffff;
+}
